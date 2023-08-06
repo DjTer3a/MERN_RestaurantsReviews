@@ -4,6 +4,10 @@ class RestaurantDataService{
     getAll(page=0){
         return http.get(`?page=${page}`)
     }
+    // getNext(page=0){
+    //     page+=1
+    //     return page
+    // }
 
     get(id){
         return http.get(`/id/${id}`)

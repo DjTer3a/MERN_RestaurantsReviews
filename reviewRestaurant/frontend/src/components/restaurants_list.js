@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RestaurantDataService from "../services/restaurant";
 import { Link } from "react-router-dom";
+// import ReactPaginate from 'react-paginate';
 
 const RestaurantsList = props => {
   const [restaurants, setRestaurants] = useState([]);
@@ -176,10 +177,50 @@ const RestaurantsList = props => {
           );
         })}
         </ul>
-
+        {/* <PaginatedItems></PaginatedItems> */}
       </div>
     </div>
   );
+  // function PaginatedItems({ itemsPerPage }) {
+  //   // We start with an empty list of items.
+  //   const [currentItems, setCurrentItems] = useState(null);
+  //   const [pageCount, setPageCount] = useState(0);
+  //   // Here we use item offsets; we could also use page offsets
+  //   // following the API or data you're working with.
+  //   const [itemOffset, setItemOffset] = useState(0);
+  
+  //   useEffect(() => {
+  //     // Fetch items from another resources.
+  //     const endOffset = itemOffset + itemsPerPage;
+  //     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  //     setCurrentItems(restaurants.slice(itemOffset, endOffset));
+  //     setPageCount(Math.ceil(restaurants.length / itemsPerPage));
+  //   }, [itemOffset, itemsPerPage]);
+  
+  //   // Invoke when user click to request another page.
+  //   const handlePageClick = (event) => {
+  //     const newOffset = (event.selected * itemsPerPage) % restaurants.length;
+  //     console.log(
+  //       `User requested page number ${event.selected}, which is offset ${newOffset}`
+  //     );
+  //     setItemOffset(newOffset);
+  //   };
+  
+  //   return (
+  //     <>
+  //       <restaurants currentItems={currentItems} />
+  //       <ReactPaginate
+  //         breakLabel="..."
+  //         nextLabel="next >"
+  //         onPageChange={handlePageClick}
+  //         pageRangeDisplayed={20}
+  //         pageCount={pageCount}
+  //         previousLabel="< previous"
+  //         renderOnZeroPageCount={null}
+  //       />
+  //     </>
+  //   );
+  // }
 };
 
 export default RestaurantsList;
