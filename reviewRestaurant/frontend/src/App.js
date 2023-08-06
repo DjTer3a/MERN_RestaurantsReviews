@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Switch, Route, Link} from "react-router-dom"
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
 import AddReview from "./components/add_review"
